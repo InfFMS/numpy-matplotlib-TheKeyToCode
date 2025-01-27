@@ -10,6 +10,8 @@
 import math
 import random
 import matplotlib.pyplot as plt
+from matplotlib.widgets import Button
+
 
 def get_dir():
     return random.randint(1,4)
@@ -31,11 +33,12 @@ for i in l:
     if i == 4:
         y.append(y[-1])
         x.append(x[-1]-1)
-fig, axs = plt.subplots( figsize=(10, 4))  # 1 ряд, 2 столбца
+fig, axs = plt.subplots(left=0.1, bottom=0.35, )  # 1 ряд, 2 столбца
 
 axs.plot(x, y, color="blue")
 axs.set_title("Движение")
 axs.set_xlabel("X")
 axs.set_ylabel("Y")
 plt.title("Движение")
+plt.button = Button(axs, 'next move')
 plt.show()

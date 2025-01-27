@@ -38,7 +38,7 @@ for i in range(365):
     elif negative_t_delta>negative_t_max:
         negative_t_max = negative_t_delta
 categories = []
-for i in range(t_max-t_min+1):
+for i in range(t_min,t_max+1):
     categories.append(i)
 
 days = []
@@ -54,9 +54,10 @@ axs[0].set_xlabel("Дни")
 axs[0].set_ylabel("Градусы")
 
 # График 2
-
-plt.bar(categories, t_r, color='purple')
+print(categories)
+plt.bar(categories, t_r, color='purple', )
 plt.title("Температура")
+# plt.xlabel()
 
 plt.tight_layout()
 plt.show()
